@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Редактировать пост</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Введите название</label><br>
+            <input type="text" name="title" value="{{posts.title}}" />
+        </p>
+        <p>
+            <label>Введите описание</label><br>
+            <textarea type="text" name="body" value="{{posts.body}}"></textarea>
+        </p>
+        <p>
+            <label>Сделать публичным</label>
+            <input type="checkbox" name="chek" >
+        </p>
+        <button type="submit" class="btn btn-success">Редактировать</button>
+    </form>
+{% endblock %}
